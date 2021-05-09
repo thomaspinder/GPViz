@@ -1,0 +1,75 @@
+# Adapted from https://github.com/hosilva/mplstyle/blob/master/computermodernstyle.mplstyle
+### Axes
+axes.titlesize : 24
+axes.labelsize : 18
+axes.spines.left:   True  # display axis spines
+axes.spines.bottom: True
+axes.spines.top:    False
+axes.spines.right:  False
+axes.grid: true
+
+### Lines
+lines.linewidth : 2.0
+lines.markersize : 4
+hatch.linewidth: 0.25
+
+patch.antialiased   : True
+
+### Ticks
+xtick.top: False
+xtick.bottom: True
+xtick.major.size: 4.0
+xtick.minor.size: 2.0
+xtick.major.width: 0.5
+xtick.minor.width: 0.5
+xtick.direction: in
+xtick.minor.visible: True
+xtick.major.top: True
+xtick.major.bottom: True
+xtick.minor.top: True
+xtick.minor.bottom: True
+xtick.major.pad: 5.0
+xtick.minor.pad: 5.0
+xtick.labelsize: 14
+
+ytick.left: True
+ytick.right: False
+ytick.major.size: 4.0
+ytick.minor.size: 2.0
+ytick.major.width: 0.5
+ytick.minor.width: 0.5
+ytick.direction: in
+ytick.minor.visible: True
+ytick.major.left: True
+ytick.major.right: True
+ytick.minor.left: True
+ytick.minor.right: True
+ytick.major.pad: 5.0
+ytick.minor.pad: 5.0
+ytick.labelsize: 14
+
+### Legend
+legend.frameon: True
+legend.fontsize: large
+legend.loc: best
+
+### Figure size
+figure.figsize: 14.0, 8
+figure.subplot.left: 0.125
+figure.subplot.bottom: 0.175
+figure.subplot.top: 0.95
+figure.subplot.right: 0.95
+figure.autolayout : False
+
+### Fonts
+font.family: serif
+font.serif: Computer Modern Roman
+text.usetex : true
+
+### Saving figures
+path.simplify : True
+
+### Grids
+grid.linestyle: -
+grid.linewidth: 0.3
+grid.color: cbcbcb
