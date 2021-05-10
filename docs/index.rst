@@ -17,10 +17,8 @@ GPViz can be installed by simply running the following command
 It is recommended that this is done from within a virtual environment as the Jax/GPJax dependencies are quite strict.
 
 
-Demo
------------------------------------------------------
 .. toctree::
     :maxdepth: 1
-    :caption: GPViz Demo
+    :caption: Demo
 
     nbs/demo
