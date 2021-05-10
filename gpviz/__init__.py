@@ -6,6 +6,7 @@ import pkg_resources
 
 __version__ = "0.0.3"
 __author__ = 'Thomas Pinder'
+stylesheet = "https://raw.githubusercontent.com/thomaspinder/GPViz/master/gpviz/styles/gpviz.mplstyle"
 
 # Add GPViz stylesheet to matplotlib's stylesheet set.
 data_path = pkg_resources.resource_filename('gpviz', 'styles/')
