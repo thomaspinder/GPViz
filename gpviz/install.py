@@ -1,3 +1,4 @@
+from pkg_resources import resource_filename
 import matplotlib as mpl
 import os
 import shutil
@@ -13,8 +14,9 @@ def install_stylesheet():
     except FileExistsError:
         pass
 
-    # copy the files into the stylelib directory
     try:
-        shutil.copy('gpviz/styles/gpviz.mplstyle', stylelib)
-    except FileNotFoundError:
-        shutil.copy('styles/gpviz.mplstyle', stylelib)
+        filepath = resource_filename('gpviz', 'styles/gpviz.mplstyle')
+    except ModuleNotFoundError:
+        filepath = resource_filename(__name__, 'styles/gpviz.mplstyle')
+
+    shutil.copy(filepath, stylelib)
