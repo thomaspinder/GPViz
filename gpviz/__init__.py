@@ -4,7 +4,7 @@ from .utils import tidy_legend, glow
 import matplotlib as mpl
 import pkg_resources
 
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 __author__ = 'Thomas Pinder'
 __stylesheet__ = 'https://raw.githubusercontent.com/thomaspinder/GPViz/master/gpviz/styles/gpviz.mplstyle'
 

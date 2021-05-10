@@ -22,7 +22,7 @@ EXTRAS = {
 
 setup(
     name="GPViz",
-    version="0.0.3",
+    version="0.0.4",
     author="Thomas Pinder",
     author_email="t.pinder2@lancaster.ac.uk",
     packages=find_packages(".", exclude=["tests"]),
