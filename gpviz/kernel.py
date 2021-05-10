@@ -10,8 +10,8 @@ from typing import Tuple
 Array = jnp.DeviceArray
 
 
-@dispatch(Kernel, Array, dict)
-def plot(kernel: Kernel, X: Array, params: dict, ax = None):
+@dispatch(Kernel, Array)
+def plot(kernel: Kernel, X: Array, params: dict = None, ax = None):
     """
     Plot the kernel's Gram matrix.
 
@@ -21,19 +21,18 @@ def plot(kernel: Kernel, X: Array, params: dict, ax = None):
     :param ax: An optional matplotlib axes
     :return:
     """
-    if dict is None:
+    if params is None:
         params = initialise(kernel)
 
     cols = get_cmap()
     if ax is None:
         fig, ax = plt.subplots()
-        fig.set_tight_layout(False)
 
     K = gpjax.kernels.gram(kernel, X, params)
     ax.matshow(K, cmap = cols)
 
 
-@dispatch(Kernel, Array, Array, dict)
+@dispatch(Kernel, Array, Array)
 def plot(kernel: Kernel, X: Array, Y: Array, params: dict = None, ax=None):
     """
     Plot the kernel's cross-covariance matrix.
@@ -45,7 +44,7 @@ def plot(kernel: Kernel, X: Array, Y: Array, params: dict = None, ax=None):
     :param ax: An optional matplotlib axes
     :return:
     """
-    if dict is None:
+    if params is None:
         params = initialise(kernel)
 
     cols = get_cmap()
@@ -68,13 +67,12 @@ def plot(kernel: Kernel, params: dict = None, ax=None, xrange: Tuple[float, floa
     :param xrange The tuple pair lower and upper values over which the kernel should be evaluated.
     :return:
     """
-    if dict is None:
+    if params is None:
         params = initialise(kernel)
 
     cols = get_colours()
     if ax is None:
         fig, ax = plt.subplots()
-        fig.set_tight_layout(False)
 
     X = jnp.linspace(xrange[0], xrange[1], num=200).reshape(-1, 1)
     x1 = jnp.array([[0.0]])

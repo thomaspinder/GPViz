@@ -1,4 +1,4 @@
-from typing import Union, List
+from typing import List
 import gpjax.core as gpx
 
 import jax.numpy as jnp
@@ -44,13 +44,11 @@ def plot(
     cols = get_colours()
     if ax is None:
         fig, ax = plt.subplots()
-        fig.set_tight_layout(False)
     ax.plot(data.X, samples.T, alpha=0.3, color=cols["base"])
     ax.set_xlabel("X")
     ax.set_ylabel("y")
     ax.set_xlim(jnp.min(data.X), jnp.max(data.X))
     ax.set_title(title, loc="left")
-    return fig, ax
 
 
 @dispatch(Array, gpx.Prior, dict, Array)
@@ -122,7 +120,6 @@ def plot(
     rv = gpx.random_variable(gp, params, data, jitter_amount=1e-6)(testing)
     if ax is None:
         fig, ax = plt.subplots()
-        fig.set_tight_layout(False)
 
     mu = rv.mean()
     sigma = rv.variance()
@@ -165,7 +162,7 @@ def plot(
     if mean:
         mu_line = ax.plot(testing, mu, color=cols["base"], label="Predictive mean", linewidth=5)
         if glow_mean:
-            glow(mu_line, ax, diff_linewidth=1.2)
+            glow(mu_line, ax)
 
     ax.set_xlabel("X")
     ax.set_ylabel("y")
@@ -177,7 +174,6 @@ def plot(
     if legend:
         # Remove duplicated labels
         ax = tidy_legend(ax)
-    return fig, ax
 
 
 @dispatch(

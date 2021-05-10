@@ -12,13 +12,9 @@ def test_prior_plot():
     D = gpx.Dataset(X=x, y=y)
     f = gpx.Prior(kernel=gpx.RBF())
     params = gpx.initialise(f)
-    fig, ax = gpv.plot(key, f, params, D, n_samples=10, title='Prior draws')
-    assert fig is not None
-    assert ax is not None
+    gpv.plot(key, f, params, D, n_samples=10, title='Prior draws')
+    gpv.plot(key, f, params, x, n_samples=10, title='Prior draws')
 
-    fig, ax = gpv.plot(key, f, params, x, n_samples=10, title='Prior draws')
-    assert fig is not None
-    assert ax is not None
 
 
 def test_posterior_plot():
@@ -30,9 +26,5 @@ def test_posterior_plot():
     fx = f * gpx.Gaussian()
     params = gpx.initialise(fx)
     testing = gpx.Dataset(X=jnp.linspace(-2.2, 2.2, 100).reshape(-1, 1))
-    fig, ax = gpv.plot(key, fx, params, D, jnp.linspace(-2.2, 2.2, 100).reshape(-1, 1))
-    assert fig is not None
-    assert ax is not None
-    fig, ax = gpv.plot(key, fx, params, D, testing)
-    assert fig is not None
-    assert ax is not None
+    gpv.plot(key, fx, params, D, jnp.linspace(-2.2, 2.2, 100).reshape(-1, 1))
+    gpv.plot(key, fx, params, D, testing)

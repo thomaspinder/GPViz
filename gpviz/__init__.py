@@ -1,5 +1,6 @@
 from .gp import plot
 from .kernel import plot
+from .install import install_stylesheet
 from .utils import tidy_legend, glow
 import matplotlib as mpl
 import pkg_resources
