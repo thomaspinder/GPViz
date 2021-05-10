@@ -1,4 +1,7 @@
 # Adapted from https://github.com/hosilva/mplstyle/blob/master/computermodernstyle.mplstyle
+### Default colors
+axes.prop_cycle : cycler('color', ['#B5121B', '#083D77', '#F77F00', '#0B6E4F', '#254441', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'])
+
 ### Axes
 axes.titlesize : 24
 axes.labelsize : 18

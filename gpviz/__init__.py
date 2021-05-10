@@ -4,7 +4,7 @@ from .utils import tidy_legend, glow
 import matplotlib as mpl
 import pkg_resources
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __author__ = 'Thomas Pinder'
 
 # Add GPViz stylesheet to matplotlib's stylesheet set.
