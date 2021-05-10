@@ -1,6 +1,6 @@
 # GPViz: Visualizing Gaussian processes
 
-[comment]: <> ([![codecov]&#40;https://codecov.io/gh/thomaspinder/gpviz/branch/master/graph/badge.svg?token=DM1DRDASU2&#41;]&#40;https://codecov.io/gh/thomaspinder/gpviz&#41;)
+[![codecov](https://codecov.io/gh/thomaspinder/GPViz/branch/master/graph/badge.svg?token=3FK9ZMU9PB)](https://codecov.io/gh/thomaspinder/GPViz)
 [![Documentation Status](https://readthedocs.org/projects/gpviz/badge/?version=latest)](https://gpviz.readthedocs.io/en/latest/?badge=latest)
 
 GPViz is an extension library to [GPJax](https://github.com/thomaspinder/GPJax) that facilitates fast and informative plotting of Gaussian processes and kernels.
