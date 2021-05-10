@@ -23,4 +23,4 @@ Demo
     :maxdepth: 1
     :caption: GPViz Demo
 
-    demo
+    nbs/demo

@@ -1,5 +1,4 @@
 import gpjax
-import gpjax.core as gpx
 from gpjax.parameters import initialise
 import matplotlib.pyplot as plt
 from multipledispatch import dispatch
@@ -13,6 +12,15 @@ Array = jnp.DeviceArray
 
 @dispatch(Kernel, Array, dict)
 def plot(kernel: Kernel, X: Array, params: dict, ax = None):
+    """
+    Plot the kernel's Gram matrix.
+
+    :param kernel: The kernel function that generates the Gram matrix
+    :param X: The data points for which the Gram matrix is computed on.
+    :param params: A dictionary containing the kernel parameters
+    :param ax: An optional matplotlib axes
+    :return:
+    """
     if dict is None:
         params = initialise(kernel)
 
@@ -27,6 +35,16 @@ def plot(kernel: Kernel, X: Array, params: dict, ax = None):
 
 @dispatch(Kernel, Array, Array, dict)
 def plot(kernel: Kernel, X: Array, Y: Array, params: dict = None, ax=None):
+    """
+    Plot the kernel's cross-covariance matrix.
+
+    :param kernel: The kernel function that generates the covariance matrix
+    :param X: The first set of data points for which the covariance matrix is computed on.
+    :param Y: The second set of data points for which the covariance matrix is computed on.
+    :param params: A dictionary containing the kernel parameters
+    :param ax: An optional matplotlib axes
+    :return:
+    """
     if dict is None:
         params = initialise(kernel)
 
@@ -41,6 +59,15 @@ def plot(kernel: Kernel, X: Array, Y: Array, params: dict = None, ax=None):
 
 @dispatch(Kernel)
 def plot(kernel: Kernel, params: dict = None, ax=None, xrange: Tuple[float, float] = (-10, 10.)):
+    """
+    Plot the kernel's shape.
+
+    :param kernel: The kernel function
+    :param params: A dictionary containing the kernel parameters
+    :param ax: An optional matplotlib axes
+    :param xrange The tuple pair lower and upper values over which the kernel should be evaluated.
+    :return:
+    """
     if dict is None:
         params = initialise(kernel)
 
@@ -54,4 +81,3 @@ def plot(kernel: Kernel, params: dict = None, ax=None, xrange: Tuple[float, floa
     K = gpjax.kernels.cross_covariance(kernel, X, x1, params)
     ax.plot(X, K.T, color=cols['base'])
     mplcyberpunk.add_underglow(ax=ax)
-
