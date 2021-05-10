@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from gpviz import install_stylesheet
+from gpviz.install import install_stylesheet
 
 
 def test_install():
